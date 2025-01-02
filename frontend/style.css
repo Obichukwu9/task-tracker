@@ -1,58 +1,126 @@
 body {
     font-family: Arial, sans-serif;
-    margin: 20px;
+    background-color: #f1f1f1;
+    margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-image: url('https://www.w3schools.com/w3images/workplace.jpg'); /* Professional background */
+    background-size: cover;
+    background-position: center;
+    color: #333;
 }
 
-h1 {
-    text-align: center;
-}
-
-#app {
-    max-width: 600px;
-    margin: 0 auto;
-    background: white;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-#taskForm {
-    display: flex;
-    justify-content: space-between;
-}
-
-#taskInput {
-    flex: 1;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    margin-right: 10px;
-}
-
-#taskList {
-    list-style: none;
-    padding: 0;
-}
-
-#taskList li {
-    padding: 10px;
-    border-bottom: 1px solid #ccc;
+/* Navigation Bar */
+nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px 20px;
 }
 
-button {
-    padding: 10px;
-    border: none;
-    border-radius: 4px;
-    background: #007BFF;
+nav button {
     color: white;
+    background: transparent;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 16px;
+}
+
+nav button:hover {
+    opacity: 0.8;
+}
+
+nav .nav-links button {
+    margin-left: 10px;
+}
+
+/* Dashboard Section */
+.section {
+    padding: 20px;
+    text-align: center;
+}
+
+/* To-Do Input Section */
+#toDoListSection input[type="text"], #taskDate, #reminderTime {
+    padding: 10px;
+    font-size: 18px;
+    width: 300px;
+    margin: 10px 0;
+}
+
+#toDoListSection button {
+    padding: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    font-weight: bold;
     cursor: pointer;
 }
 
+#toDoListSection button:hover {
+    opacity: 0.8;
+}
+
+/* Task Boxes */
+.task {
+    padding: 10px;
+    background: #e7f3fe;
+    margin: 10px;
+    border-radius: 5px;
+    display: inline-block;
+    font-weight: bold;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+    border-radius: 10px;
+    margin: 15% auto;
+}
+
+.close {
+    position: absolute;
+    right: 10px;
+    top: 0;
+    font-weight: bold;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: red;
+}
+
+/* Hover Effects for Buttons */
 button:hover {
-    background: #0056b3;
+    opacity: 0.9;
+    transform: scale(1.05);
+    transition: all 0.2s ease-in-out;
+}
+
+/* Task Info Section */
+#toDoListInfo a {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+#toDoListInfo a:hover {
+    text-decoration: underline;
 }
