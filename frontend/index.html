@@ -1,20 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Task Tracker</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
+
 <body>
-    <h1>Task Tracker</h1>
-    <div id="app">
-        <form id="taskForm">
-            <input type="text" id="taskInput" placeholder="Enter a new task" required>
-            <button type="submit">Add Task</button>
-        </form>
-        <ul id="taskList"></ul>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-left">
+            <button onclick="showDashboard()">Home</button>
+        </div>
+        <div class="nav-right">
+            <button onclick="showLogin()">Login</button>
+            <button id="logoutBtn" style="display:none;" onclick="logout()">Logout</button>
+            <div class="nav-links">
+                <button onclick="showAboutUs()"><i class="fas fa-info-circle"></i> About Us</button>
+                <button onclick="showContactUs()"><i class="fas fa-phone-alt"></i> Contact Us</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Dashboard Section -->
+    <section id="dashboard" class="section">
+        <h2>Task Dashboard</h2>
+        <h3>Your tasks, organized and manageable.</h3>
+
+        <!-- To-Do List Section -->
+        <div id="toDoListSection">
+            <button onclick="addTask()">Add Task</button>
+            <input type="text" id="taskInput" placeholder="Enter your task">
+            <input type="date" id="taskDate" placeholder="Pick a date">
+            <input type="time" id="reminderTime" placeholder="Set reminder time">
+            <div id="taskList"></div>
+        </div>
+    </section>
+
+    <!-- To-Do List Info Section -->
+    <section id="toDoListInfo" class="section" style="display:none">
+        <h2>To-Do List</h2>
+        <p>Organize your work and life, simplify your tasks with the world’s #1 task manager app.</p>
+        <a href="https://www.todolist.com" target="_blank">View Online Tasks</a>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="aboutUs" class="section" style="display:none">
+        <h2>About Us</h2>
+        <p>We are a task-tracking platform designed to help individuals and teams stay organized and productive.</p>
+        <p>Our mission is to make task management easier, intuitive, and accessible to all.</p>
+    </section>
+
+    <!-- Contact Us Section -->
+    <section id="contactUs" class="section" style="display:none">
+        <h2>Contact Us</h2>
+        <p>Email: <strong>support@tasktracker.com</strong></p>
+        <p>Location: <strong>New York, USA</strong></p>
+        <p>We value your feedback and are committed to improving your experience with us.</p>
+    </section>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeLogin()">×</span>
+            <h2>Login</h2>
+            <input type="text" id="username" placeholder="Username">
+            <input type="password" id="password" placeholder="Password">
+            <button onclick="login()">Login</button>
+        </div>
     </div>
+
     <script src="script.js"></script>
 </body>
+
 </html>
